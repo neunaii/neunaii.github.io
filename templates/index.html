@@ -1,0 +1,21 @@
+{% extends "parent.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blue_paragraph.css') }}">
+    <img alt="stamp2_hans_039.png" src="{{ url_for('static', filename='images/stamp2_hans_039.png') }}" width="10%"
+         height="10%">
+{% endblock %}
+
+{% block body %}
+    {% if username %}
+        <p>{{ username | username_star_filter | default('') }} {{ username | length }} {{ -99 | abs() }}</p>
+    {% else %}
+        <p>{{ -79 | abs() }}</p>
+    {% endif %}
+    <p>{{ user0.get_user_name() }} {{ user0.get_user_name() | length }}</p>
+    <p>{{ user1.username }} {{ user1.username | length }}</p>
+{% endblock %}
